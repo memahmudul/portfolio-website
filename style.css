@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+:root{
+    --pink : #ff4757;
+    --box-shadow : 0 .5rem 1rem rgba(0,0,0,.1)
+}
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    transition: all .2s linear;
+}
+*::selection{
+    background: var(--pink);
+    color: #fff;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar{
+    width: 1rem;
+}
+::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb{
+    background: var(--pink);
+}
+.btn{
+    padding: .7rem 3rem;
+    background: #444;
+    font-size: 1.7rem;
+    border-radius: 5rem;
+    color: #fff;
+    box-shadow: var(--box-shadow)
+
+}
+.btn:hover{
+    background: var(--pink);
+    color: black;
+}
+section{
+    min-height: 100vh;
+}
+
+/*header style start*/
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    box-shadow: var(--box-shadow);
+    z-index: 1000;
+}
+.header .navbar a{
+    font-size: 1.7rem;
+    padding-right: 2rem;
+    color: #444;
+}
+.header #menu-btn{
+    font-size: 3rem;
+    display: none;
+    cursor: pointer;
+}
+/*header style end*/
+
+
+@media (max-width : 768px) {
+    html{
+        font-size: 55%;
+    }
+    .header #menu-btn{
+        display: block;
+    }
+    .header .navbar{
+        width: 35rem;
+        height: 100%;
+        position: fixed;
+        top: 8rem;
+        left: -105%;
+        
+        display: flex;
+        flex-flow: column;
+        text-align: center;
+        
+        box-shadow: var(--box-shadow);
+    }
+    .header .navbar a{
+        font-size: 3rem;
+        padding: 1.5rem 0;
+        
+    }
+    .header .navbar a:hover{
+        background: var(--pink);
+    }
+    .fa-times{
+        transform: rotate(180deg);
+    }
+    .header .navbar.popup{
+        left: 0;
+    }
+
+    
+}
